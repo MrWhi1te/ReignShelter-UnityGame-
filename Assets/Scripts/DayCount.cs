@@ -1,0 +1,54 @@
+using System.Collections;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class DayCount : MonoBehaviour
+{
+    public CardManager _CardManager;
+
+    public Text dayCountText;
+    public float resetTime = 4f;
+    public GameObject startGameBttn;
+
+    private int dayCount;
+
+    private void Start()
+    {
+        dayCountText.text = _CardManager.dayCount + " дней выживания";
+        if(_CardManager.dayCount == 0) startGameBttn.SetActive(true);
+    }
+
+    public void ResetCounter()
+    {
+        dayCount = _CardManager.dayCount;
+        startGameBttn.SetActive(false);
+        dayCountText.text = dayCount + " дней выживания";
+        StartCoroutine(ResetCounterCoroutine());
+    }
+
+    private IEnumerator ResetCounterCoroutine()
+    {
+        float startTime = Time.time; // Запоминаем время начала сброса
+        int initialDayCount = dayCount; // Запоминаем начальное значение счетчика
+
+        while (dayCount > 0)
+        {
+            // Вычисляем процент времени, прошедшего с начала сброса
+            float elapsedTime = Time.time - startTime;
+            float progress = elapsedTime / resetTime;
+
+            // Вычисляем новое значение счетчика на основе прогресса
+            dayCount = Mathf.RoundToInt(Mathf.Lerp(initialDayCount, 0, progress));
+
+            dayCountText.text = dayCount + " дней выживания";
+
+            yield return null;
+        }
+
+        // Сбрасываем счетчик до 0, если он не достиг 0 ранее
+        _CardManager.dayCount = 0;
+        dayCountText.text = _CardManager.dayCount + " дней выживания";
+
+        startGameBttn.SetActive(true);
+    }
+}
