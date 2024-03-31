@@ -4,7 +4,7 @@ using UnityEngine.UI;
 
 public class DayCount : MonoBehaviour
 {
-    public CardManager _CardManager;
+    public GameManager _GameManager;
 
     public Text dayCountText;
     public float resetTime = 4f;
@@ -14,13 +14,13 @@ public class DayCount : MonoBehaviour
 
     private void Start()
     {
-        dayCountText.text = _CardManager.dayCount + " дней выживания";
-        if(_CardManager.dayCount == 0) startGameBttn.SetActive(true);
+        dayCountText.text = _GameManager.dayCount + " дней выживания";
+        if(_GameManager.dayCount == 0) startGameBttn.SetActive(true);
     }
 
     public void ResetCounter()
     {
-        dayCount = _CardManager.dayCount;
+        dayCount = _GameManager.dayCount;
         startGameBttn.SetActive(false);
         dayCountText.text = dayCount + " дней выживания";
         StartCoroutine(ResetCounterCoroutine());
@@ -46,8 +46,8 @@ public class DayCount : MonoBehaviour
         }
 
         // Сбрасываем счетчик до 0, если он не достиг 0 ранее
-        _CardManager.dayCount = 0;
-        dayCountText.text = _CardManager.dayCount + " дней выживания";
+        _GameManager.dayCount = 0;
+        dayCountText.text = _GameManager.dayCount + " дней выживания";
 
         startGameBttn.SetActive(true);
     }

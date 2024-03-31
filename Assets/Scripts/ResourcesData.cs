@@ -72,7 +72,7 @@ public class ResourcesData : MonoBehaviour
             {
                 resources[i].NewGame();
             }
-            _CardManager.ResetGame();
+            //_CardManager.ResetGame();
         }
     }
 }

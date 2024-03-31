@@ -7,38 +7,35 @@ using UnityEngine.UI;
 public class CardManager : MonoBehaviour
 {
     public CardSwipe _CardSwipe;
-    public DayCount _DayCount;
-
-    public int indexCard = 0;
-    [HideInInspector] public int dayCount;
+    public GameManager _GameManager;
 
     public List<CardData> cards;
 
     [SerializeField] private Image cardImage;
     [SerializeField] private Text descriptionText;
     [SerializeField] private Text nameCardText;
-    [SerializeField] private Text dayCountText;
-    [SerializeField] private GameObject cardStartObj;
-    [SerializeField] private GameObject startGamePan;
-
+    
     [HideInInspector] public CardData currentCard;
 
     [HideInInspector] public List<int[]> rightDirection = new();
     [HideInInspector] public List<int[]> leftDirection = new();
 
+    private int randomEventsCardsCount;
+    private int adsCardsCount;
+
     private void Start()
     {
-        currentCard = cards[indexCard];
+        currentCard = cards[_GameManager.indexCard];
         UpdateCard();
     }
 
-    private void UpdateCard()
+    public void UpdateCard()
     {
-        currentCard = cards[indexCard];
+        currentCard = cards[_GameManager.indexCard];
         cardImage.sprite = currentCard.cardSprite;
         descriptionText.text = currentCard.description;
         nameCardText.text = currentCard.cardName;
-        dayCountText.text = dayCount + " дней выживания";
+        _GameManager.dayCountText.text = _GameManager.dayCount + " дней выживания";
         ResourcesInfo();
         _CardSwipe.NewCard();
     }
@@ -47,19 +44,29 @@ public class CardManager : MonoBehaviour
     {
         if(direction != "")
         {
-
+            //cards[number];
+        }
+        else if (randomEventsCardsCount >= 3)
+        {
+            randomEventsCardsCount = 0;
+        }
+        else if (adsCardsCount >= 7)
+        {
+            adsCardsCount = 0;
         }
         else
         {
-            indexCard++;
-            dayCount += UnityEngine.Random.Range(1, 6);
-            if (indexCard < cards.Count) UpdateCard();
+            _GameManager.indexCard++;
+            _GameManager.dayCount += UnityEngine.Random.Range(1, 2);
+            if (_GameManager.indexCard < cards.Count) UpdateCard();
             else
             {
-                indexCard = 0;
-                cardStartObj.SetActive(false); cardStartObj.SetActive(true);
+                _GameManager.indexCard = 0;
+                _GameManager.ActiveCardStart();
                 UpdateCard();
             }
+            randomEventsCardsCount++;
+            adsCardsCount++;
         }
     }
 
@@ -98,19 +105,5 @@ public class CardManager : MonoBehaviour
             array[2] = Math.Abs(effect) > 0.06 ? 1 : 0;
             leftDirection.Add(array);
         }
-    }
-
-    public void StartGame()
-    {
-        startGamePan.SetActive(false);
-        cardStartObj.SetActive(false); cardStartObj.SetActive(true);
-        UpdateCard();
-    }
-
-    public void ResetGame()
-    {
-        indexCard = 0;
-        startGamePan.SetActive(true);
-        _DayCount.ResetCounter();
     }
 }

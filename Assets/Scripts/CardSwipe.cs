@@ -119,7 +119,8 @@ public class CardSwipe : MonoBehaviour
             }
             else if (CM.currentCard.endCard)
             {
-
+                RD.ClearResourcesInfo();
+                //CM.ResetGame();
             }
             else RD.CheckResource(CM.currentCard.rNextCards, CM.currentCard.rNextCardNumber);
         }
@@ -128,7 +129,8 @@ public class CardSwipe : MonoBehaviour
             RD.SetResourcesValue(new float[] { CM.currentCard.lReputationEffect, CM.currentCard.lPeopleEffect, CM.currentCard.lGunEffect, CM.currentCard.lFoodEffect });
             if (CM.currentCard.endCard)
             {
-
+                RD.ClearResourcesInfo();
+                //M.ResetGame();
             }
             else RD.CheckResource(CM.currentCard.lNextCards, CM.currentCard.lNextCardNumber);
         }
