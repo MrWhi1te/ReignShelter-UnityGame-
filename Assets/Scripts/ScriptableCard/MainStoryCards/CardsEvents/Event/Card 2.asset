@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 
   cardSprite: {fileID: 0}
-  description: 
+  description: "\u0410\u0440\u0442\u0435\u0444\u0430\u043A\u0442 ?"
   adsCard: 0
   endCard: 0
   rSwipeText: 

@@ -12,19 +12,41 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68e36db2f427c0f40900d5e785765d81, type: 3}
   m_Name: Card 6
   m_EditorClassIdentifier: 
-  cardName: 
+  cardName: "\u0416\u0438\u0442\u0435\u043B\u044C"
   cardSprite: {fileID: 0}
-  description: 
+  description: "\u0412 \u0443\u0431\u0435\u0436\u0438\u0449\u0435 \u043D\u0430\u0445\u043E\u0434\u0438\u0442\u0441\u044F
+    \u0433\u0440\u0443\u043F\u043F\u0430 \u0442\u0435\u0430\u0442\u0440\u0430\u043B\u044C\u043D\u044B\u0445
+    \u0430\u0440\u0442\u0438\u0441\u0442\u043E\u0432, \u043A\u043E\u0442\u043E\u0440\u044B\u0435
+    \u043F\u0440\u0435\u0434\u043B\u0430\u0433\u0430\u044E\u0442 \u0443\u0441\u0442\u0440\u043E\u0438\u0442\u044C
+    \u043C\u0443\u0437\u044B\u043A\u0430\u043B\u044C\u043D\u044B\u0439 \u0441\u043F\u0435\u043A\u0442\u0430\u043A\u043B\u044C
+    \u043E \u0431\u0443\u0434\u0443\u0449\u0435\u043C \u0447\u0435\u043B\u043E\u0432\u0435\u0447\u0435\u0441\u0442\u0432\u0430"
   adsCard: 0
   endCard: 0
-  rSwipeText: 
+  endTrainer: 0
+  rightSide:
+    SwipeText: "\u0423\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: event
+    NextCardNumber: 6
+  rSwipeText: "\u0423\u0441\u0442\u0440\u043E\u0438\u0442\u044C \u043F\u0440\u0435\u0434\u0441\u0442\u0430\u0432\u043B\u0435\u043D\u0438\u0435"
   rReputationEffect: 0
   rPeopleEffect: 0
   rGunEffect: 0
   rFoodEffect: 0
-  rNextCards: 
-  rNextCardNumber: 0
-  lSwipeText: 
+  rNextCards: event
+  rNextCardNumber: 6
+  leftSide:
+    SwipeText: "\u041D\u0435 \u043D\u0443\u0436\u043D\u043E "
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: 
+    NextCardNumber: 0
+  lSwipeText: "\u041D\u0435 \u043D\u0443\u0436\u043D\u043E "
   lReputationEffect: 0
   lPeopleEffect: 0
   lGunEffect: 0

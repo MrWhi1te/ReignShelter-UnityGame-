@@ -14,17 +14,35 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 
   cardSprite: {fileID: 0}
-  description: 
+  description: "\u042F\u0432\u043B\u0435\u043D\u0438\u0435\u043C \u043E\u043A\u0430\u0437\u0430\u043B\u043E\u0441\u044C
+    \u043F\u044F\u0442\u043D\u043E \u0442\u0435\u043C\u043D\u043E\u0439 \u043C\u0430\u0442\u0435\u0440\u0438\u0438"
   adsCard: 0
   endCard: 0
-  rSwipeText: 
+  endTrainer: 0
+  rightSide:
+    SwipeText: "\u041F\u043E\u0442\u0440\u043E\u0433\u0430\u0442\u044C \u0435\u0433\u043E"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: end
+    NextCardNumber: 4
+  rSwipeText: "\u041F\u043E\u0442\u0440\u043E\u0433\u0430\u0442\u044C \u0435\u0433\u043E"
   rReputationEffect: 0
   rPeopleEffect: 0
   rGunEffect: 0
   rFoodEffect: 0
-  rNextCards: 
-  rNextCardNumber: 0
-  lSwipeText: 
+  rNextCards: end
+  rNextCardNumber: 4
+  leftSide:
+    SwipeText: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: 
+    NextCardNumber: 0
+  lSwipeText: "\u041E\u0441\u0442\u0430\u0432\u0438\u0442\u044C"
   lReputationEffect: 0
   lPeopleEffect: 0
   lGunEffect: 0

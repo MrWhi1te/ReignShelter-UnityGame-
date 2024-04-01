@@ -5,6 +5,7 @@ public class CardSwipe : MonoBehaviour
 {
     public ResourcesData RD;
     public CardManager CM;
+    public GameManager _GameManager;
 
     [SerializeField] private Text textDirection;
     [SerializeField] private Image imageDirection;
@@ -50,13 +51,13 @@ public class CardSwipe : MonoBehaviour
             if (thisTransf.position.x > sideTrigger)
             {
                 textDirection.alignment = TextAnchor.MiddleLeft;
-                textDirection.text = CM.currentCard.rSwipeText;
+                textDirection.text = CM.currentCard.rightSide.SwipeText;
                 CheckResources("Right");
             }
             else if (thisTransf.position.x < -sideTrigger)
             {
                 textDirection.alignment = TextAnchor.MiddleRight;
-                textDirection.text = CM.currentCard.lSwipeText;
+                textDirection.text = CM.currentCard.leftSide.SwipeText;
                 CheckResources("Left");
             }
             else
@@ -109,30 +110,29 @@ public class CardSwipe : MonoBehaviour
 
     private void CheckDirection(string direction)
     {
-        RD.ClearResourcesInfo(); 
-        if (direction == "Right")
+        RD.ClearResourcesInfo();
+        
+        if (CM.currentCard.endCard)
         {
-            RD.SetResourcesValue(new float[] { CM.currentCard.rReputationEffect, CM.currentCard.rPeopleEffect, CM.currentCard.rGunEffect, CM.currentCard.rFoodEffect });
-            if (CM.currentCard.adsCard)
-            {
-                // ADS
-            }
-            else if (CM.currentCard.endCard)
-            {
-                RD.ClearResourcesInfo();
-                //CM.ResetGame();
-            }
-            else RD.CheckResource(CM.currentCard.rNextCards, CM.currentCard.rNextCardNumber);
+            RD.ResetResources();
+            _GameManager.ResetGame();
         }
+        
+        else if (direction == "Right")
+        {
+            RD.SetResourcesValue(new float[] { CM.currentCard.rightSide.ReputationEffect, CM.currentCard.rightSide.PeopleEffect, CM.currentCard.rightSide.GunEffect, CM.currentCard.rightSide.FoodEffect });
+
+            if (CM.currentCard.adsCard) _GameManager.ExampleOpenRewardAd(0);
+            else if (CM.currentCard.rightSide.NextCards == "endTrainer") TrainerActive();
+            else RD.CheckResource(CM.currentCard.rightSide.NextCards, CM.currentCard.rightSide.NextCardNumber);
+        }
+        
         else if(direction == "Left")
         {
-            RD.SetResourcesValue(new float[] { CM.currentCard.lReputationEffect, CM.currentCard.lPeopleEffect, CM.currentCard.lGunEffect, CM.currentCard.lFoodEffect });
-            if (CM.currentCard.endCard)
-            {
-                RD.ClearResourcesInfo();
-                //M.ResetGame();
-            }
-            else RD.CheckResource(CM.currentCard.lNextCards, CM.currentCard.lNextCardNumber);
+            RD.SetResourcesValue(new float[] { CM.currentCard.leftSide.ReputationEffect, CM.currentCard.leftSide.PeopleEffect, CM.currentCard.leftSide.GunEffect, CM.currentCard.leftSide.FoodEffect });
+
+            if (CM.currentCard.leftSide.NextCards == "endTrainer") TrainerActive();
+            else RD.CheckResource(CM.currentCard.leftSide.NextCards, CM.currentCard.leftSide.NextCardNumber);
         }
     }
 
@@ -147,5 +147,12 @@ public class CardSwipe : MonoBehaviour
         {
             for (int i = 0; i < CM.leftDirection.Count; i++) RD.DisplayResourcesInfo(CM.leftDirection[i][0], CM.leftDirection[i][1], CM.leftDirection[i][2]);
         }
+    }
+
+    private void TrainerActive()
+    {
+        _GameManager.trainer = true;
+        _GameManager.indexCard = -1;
+        RD.CheckResource("", -1);
     }
 }

@@ -8,22 +8,22 @@ public class CardData : ScriptableObject
     [TextArea] public string description;
     public bool adsCard;
     public bool endCard;
+    public bool endTrainer;
 
     [Header("Right")]
-    public string rSwipeText;
-    public float rReputationEffect;
-    public float rPeopleEffect;
-    public float rGunEffect;
-    public float rFoodEffect;
-    public string rNextCards;
-    public int rNextCardNumber;
+    public SideEffect rightSide;
 
     [Header("Left")]
-    public string lSwipeText;
-    public float lReputationEffect;
-    public float lPeopleEffect;
-    public float lGunEffect;
-    public float lFoodEffect;
-    public string lNextCards;
-    public int lNextCardNumber;
+    public SideEffect leftSide;
+}
+
+[System.Serializable]
+public class SideEffect{
+    public string SwipeText;
+    public float ReputationEffect;
+    public float PeopleEffect;
+    public float GunEffect;
+    public float FoodEffect;
+    public string NextCards;
+    public int NextCardNumber;
 }

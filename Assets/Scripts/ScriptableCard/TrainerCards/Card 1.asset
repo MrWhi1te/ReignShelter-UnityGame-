@@ -13,21 +13,24 @@ MonoBehaviour:
   m_Name: Card 1
   m_EditorClassIdentifier: 
   cardName: "\u041F\u043E\u043C\u043E\u0449\u043D\u0438\u043A"
-  cardSprite: {fileID: 0}
-  description: 
+  cardSprite: {fileID: -815352133, guid: 351cc6e0eaa7c3e4080832fba915b167, type: 3}
+  description: "\u041D\u0443\u0436\u043D\u043E \u043E\u0431\u0443\u0447\u0435\u043D\u0438\u0435?"
   adsCard: 0
   endCard: 0
-  rSwipeText: "\u0414\u0430"
-  rReputationEffect: 0
-  rPeopleEffect: 0
-  rGunEffect: 0
-  rFoodEffect: 0
-  rNextCards: trainer
-  rNextCardNumber: 2
-  lSwipeText: "\u041D\u0435\u0442"
-  lReputationEffect: 0
-  lPeopleEffect: 0
-  lGunEffect: 0
-  lFoodEffect: 0
-  lNextCards: 
-  lNextCardNumber: 0
+  endTrainer: 0
+  rightSide:
+    SwipeText: "\u0414\u0430"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: trainer
+    NextCardNumber: 2
+  leftSide:
+    SwipeText: "\u041D\u0435\u0442"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: endTrainer
+    NextCardNumber: 0

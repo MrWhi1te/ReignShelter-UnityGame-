@@ -8,6 +8,11 @@ public class Resource : MonoBehaviour
     public Image resourceImage;
     public int number;
 
+    public void SizeElement(string device)
+    {
+        if (device == "desktop") resourceImage.rectTransform.localScale = new Vector3(0.6f, 1);
+    }
+
     public void StartGame()
     {
         resourceImage.fillAmount = resourceValue;

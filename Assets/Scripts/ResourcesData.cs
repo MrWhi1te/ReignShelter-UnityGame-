@@ -1,20 +1,35 @@
-using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class ResourcesData : MonoBehaviour
 {
-    public CardManager _CardManager;
+    public GameManager _GameManager;
     public Resource[] resources;
 
     [SerializeField] private Image[] resourcesInfoImage;
     [SerializeField] private Sprite[] resourcesInfoSprite;
+
+    public void SizeElement(string device)
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            resources[i].SizeElement(device);
+        }
+    }
 
     private void Start()
     {
         for (int i = 0; i < resources.Length; i++)
         {
             resources[i].StartGame();
+        }
+    }
+
+    public void ResetResources()
+    {
+        for (int i = 0; i < resources.Length; i++)
+        {
+            resources[i].NewGame();
         }
     }
 
@@ -58,21 +73,14 @@ public class ResourcesData : MonoBehaviour
             if(resources[i].resourceValue <= 0.0001)
             {
                 postive = false;
+                _GameManager.NextCard("die", i);
                 break;
             }
         }
 
         if (postive)
         {
-            _CardManager.NextCard(direction, number);
-        }
-        else
-        {
-            for (int i = 0; i < resources.Length; i++)
-            {
-                resources[i].NewGame();
-            }
-            //_CardManager.ResetGame();
+            _GameManager.NextCard(direction, number);
         }
     }
 }

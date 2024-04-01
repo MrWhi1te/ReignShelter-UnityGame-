@@ -1,0 +1,38 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 68e36db2f427c0f40900d5e785765d81, type: 3}
+  m_Name: AdsCard
+  m_EditorClassIdentifier: 
+  cardName: "\u0420\u0435\u043A\u043B\u0430\u043C\u0430"
+  cardSprite: {fileID: 1254780258, guid: 351cc6e0eaa7c3e4080832fba915b167, type: 3}
+  description: "\u0412\u044B \u043C\u043E\u0436\u0435\u0442\u0435 \u0443\u0432\u0435\u043B\u0438\u0447\u0438\u0442\u044C
+    \u0440\u0435\u0441\u0443\u0440\u0441\u044B \u043F\u0440\u0438 \u043F\u043E\u043C\u043E\u0449\u0438
+    \u0440\u0435\u043A\u043B\u0430\u043C\u044B"
+  adsCard: 1
+  endCard: 0
+  endTrainer: 0
+  rightSide:
+    SwipeText: "\u041F\u043E\u0441\u043C\u043E\u0442\u0440\u0435\u0442\u044C"
+    ReputationEffect: 0.3
+    PeopleEffect: 0.3
+    GunEffect: 0.3
+    FoodEffect: 0.3
+    NextCards: 
+    NextCardNumber: 0
+  leftSide:
+    SwipeText: "\u041E\u0442\u043A\u0430\u0437\u0430\u0442\u044C\u0441\u044F"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: 
+    NextCardNumber: 0

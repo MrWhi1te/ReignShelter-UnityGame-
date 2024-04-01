@@ -18,6 +18,15 @@ MonoBehaviour:
     \u043A\u043E\u0440\u043E\u0432"
   adsCard: 0
   endCard: 0
+  endTrainer: 0
+  rightSide:
+    SwipeText: "\u041C\u0443\u0443"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: 0
+    FoodEffect: 0
+    NextCards: 
+    NextCardNumber: 0
   rSwipeText: "\u041C\u0443\u0443"
   rReputationEffect: 0
   rPeopleEffect: 0
@@ -25,6 +34,15 @@ MonoBehaviour:
   rFoodEffect: 0
   rNextCards: 
   rNextCardNumber: 0
+  leftSide:
+    SwipeText: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043D\u0430
+      \u043E\u0445\u043E\u0442\u0443"
+    ReputationEffect: 0
+    PeopleEffect: 0
+    GunEffect: -0.05
+    FoodEffect: 0.1
+    NextCards: 
+    NextCardNumber: 0
   lSwipeText: "\u041E\u0442\u043F\u0440\u0430\u0432\u0438\u0442\u044C \u043D\u0430
     \u043E\u0445\u043E\u0442\u0443"
   lReputationEffect: 0
