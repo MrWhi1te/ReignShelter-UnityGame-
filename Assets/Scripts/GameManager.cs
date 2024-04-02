@@ -37,6 +37,7 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += Rewarded;
+        ActiveCardStart();
     }
 
     private void OnDisable()

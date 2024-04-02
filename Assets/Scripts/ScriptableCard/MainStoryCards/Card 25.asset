@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Card 25
   m_EditorClassIdentifier: 
   cardName: 
-  cardSprite: {fileID: 0}
+  cardSprite: {fileID: -1309493769, guid: 351cc6e0eaa7c3e4080832fba915b167, type: 3}
   description: "\u041E\u0441\u043B\u0430\u0431\u043B\u0435\u043D\u0438\u0435 \u0441\u0442\u0440\u0430\u0442\u0435\u0433\u0438\u0447\u0435\u0441\u043A\u0438\u0445
     \u043E\u0431\u043E\u0440\u043E\u043D\u0438\u0442\u0435\u043B\u044C\u043D\u044B\u0445
     \u043F\u043E\u0437\u0438\u0446\u0438\u0439 \u0443\u0431\u0435\u0436\u0438\u0449\u0430
@@ -29,13 +29,6 @@ MonoBehaviour:
     FoodEffect: -0.1
     NextCards: 
     NextCardNumber: 0
-  rSwipeText: "\u041F\u0440\u043E\u0432\u0435\u0441\u0442\u0438 \u0440\u0435\u043C\u043E\u043D\u0442"
-  rReputationEffect: 0
-  rPeopleEffect: 0
-  rGunEffect: 0
-  rFoodEffect: -0.1
-  rNextCards: 
-  rNextCardNumber: 0
   leftSide:
     SwipeText: "\u041E\u0442\u043B\u043E\u0436\u0438\u0442\u044C \u0440\u0435\u043C\u043E\u043D\u0442"
     ReputationEffect: 0
@@ -44,10 +37,3 @@ MonoBehaviour:
     FoodEffect: 0
     NextCards: 
     NextCardNumber: 0
-  lSwipeText: "\u041E\u0442\u043B\u043E\u0436\u0438\u0442\u044C \u0440\u0435\u043C\u043E\u043D\u0442"
-  lReputationEffect: 0
-  lPeopleEffect: 0
-  lGunEffect: -0.1
-  lFoodEffect: 0
-  lNextCards: 
-  lNextCardNumber: 0

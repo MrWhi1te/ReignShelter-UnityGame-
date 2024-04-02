@@ -6,11 +6,12 @@ public class Resource : MonoBehaviour
 {
     public float resourceValue;
     public Image resourceImage;
+    public Image resourceParentImage;
     public int number;
 
     public void SizeElement(string device)
     {
-        if (device == "desktop") resourceImage.rectTransform.localScale = new Vector3(0.6f, 1);
+        if (device == "desktop") resourceParentImage.rectTransform.localScale = new Vector3(0.6f, 1);
     }
 
     public void StartGame()
