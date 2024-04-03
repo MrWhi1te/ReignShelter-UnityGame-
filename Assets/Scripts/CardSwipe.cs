@@ -120,11 +120,13 @@ public class CardSwipe : MonoBehaviour
         
         else if (direction == "Right")
         {
-            RD.SetResourcesValue(new float[] { CM.currentCard.rightSide.ReputationEffect, CM.currentCard.rightSide.PeopleEffect, CM.currentCard.rightSide.GunEffect, CM.currentCard.rightSide.FoodEffect });
-
             if (CM.currentCard.adsCard) _GameManager.ExampleOpenRewardAd(0);
             else if (CM.currentCard.rightSide.NextCards == "endTrainer") TrainerActive();
-            else RD.CheckResource(CM.currentCard.rightSide.NextCards, CM.currentCard.rightSide.NextCardNumber);
+            else
+            {
+                RD.SetResourcesValue(new float[] { CM.currentCard.rightSide.ReputationEffect, CM.currentCard.rightSide.PeopleEffect, CM.currentCard.rightSide.GunEffect, CM.currentCard.rightSide.FoodEffect });
+                RD.CheckResource(CM.currentCard.rightSide.NextCards, CM.currentCard.rightSide.NextCardNumber);
+            }
         }
         
         else if(direction == "Left")

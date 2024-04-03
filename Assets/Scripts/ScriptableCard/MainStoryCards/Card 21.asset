@@ -21,7 +21,7 @@ MonoBehaviour:
   endCard: 0
   endTrainer: 0
   rightSide:
-    SwipeText: "\u041D\u0435 \u043F\u0443\u0441\u043A\u0430\u0442\u044C \u0438\u0445"
+    SwipeText: "\u041D\u0435 \u043F\u0443\u0441\u043A\u0430\u0442\u044C"
     ReputationEffect: -0.05
     PeopleEffect: 0
     GunEffect: 0
@@ -29,7 +29,7 @@ MonoBehaviour:
     NextCards: 
     NextCardNumber: 0
   leftSide:
-    SwipeText: "\u0412\u043F\u0443\u0441\u0442\u0438\u0442\u044C \u0438\u0445"
+    SwipeText: "\u0412\u043F\u0443\u0441\u0442\u0438\u0442\u044C "
     ReputationEffect: 0
     PeopleEffect: 0.05
     GunEffect: 0

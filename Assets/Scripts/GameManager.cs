@@ -1,4 +1,3 @@
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
@@ -9,6 +8,7 @@ public class GameManager : MonoBehaviour
     public DayCount _DayCount;
     public CardManager _CardManager;
     public ResourcesData _ResourcesData;
+    public Sounds _Sounds;
 
     [HideInInspector] public int indexCard = 0;
     [HideInInspector] public int dayCount;
@@ -37,7 +37,6 @@ public class GameManager : MonoBehaviour
     private void OnEnable()
     {
         YandexGame.RewardVideoEvent += Rewarded;
-        ActiveCardStart();
     }
 
     private void OnDisable()
@@ -47,8 +46,9 @@ public class GameManager : MonoBehaviour
 
     public void StartGame()
     {
-        if(YandexGame.EnvironmentData.deviceType == "desktop")
+        if (YandexGame.EnvironmentData.deviceType == "desktop")
         {
+            cardStartObj.transform.localScale = new Vector3(0.3f, 1);
             _CardManager.SizeElement("desktop");
             _ResourcesData.SizeElement("desktop");
         }
@@ -84,6 +84,7 @@ public class GameManager : MonoBehaviour
 
     public void ActiveCardStart()
     {
+        _Sounds.PlayEnterCards();
         cardStartObj.SetActive(false); cardStartObj.SetActive(true);
     }
 
@@ -92,6 +93,7 @@ public class GameManager : MonoBehaviour
         if (direction != "")
         {
             _CardManager.currentCard = dictionaryCards[direction][number];
+            if (direction == "die") _Sounds.PlayAudioDie();
         }
         else if (randomEventsCardsCount >= 3)
         {
@@ -118,6 +120,7 @@ public class GameManager : MonoBehaviour
             adsCardsCount++;
         }
         dayCountText.text = dayCount + " дней выживания";
+        _Sounds.PlayAudioSwipe();
         _CardManager.UpdateCard();
     }
 

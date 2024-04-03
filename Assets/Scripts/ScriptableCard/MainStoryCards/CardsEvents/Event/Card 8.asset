@@ -37,4 +37,4 @@ MonoBehaviour:
     GunEffect: 0
     FoodEffect: 0
     NextCards: die
-    NextCardNumber: 0
+    NextCardNumber: 5

@@ -29,7 +29,7 @@ MonoBehaviour:
     NextCards: 
     NextCardNumber: 0
   leftSide:
-    SwipeText: "\u041E\u0442\u043A\u0430\u0437\u0430\u0442\u044C \u0438\u043C"
+    SwipeText: "\u041E\u0442\u043A\u0430\u0437\u0430\u0442\u044C "
     ReputationEffect: 0
     PeopleEffect: -0.1
     GunEffect: 0

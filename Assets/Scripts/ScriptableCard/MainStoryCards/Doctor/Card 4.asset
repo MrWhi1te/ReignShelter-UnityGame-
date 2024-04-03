@@ -20,7 +20,7 @@ MonoBehaviour:
   endCard: 0
   endTrainer: 0
   rightSide:
-    SwipeText: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C \u0438\u0445"
+    SwipeText: "\u0423\u043D\u0438\u0447\u0442\u043E\u0436\u0438\u0442\u044C "
     ReputationEffect: -0.05
     PeopleEffect: 0
     GunEffect: 0

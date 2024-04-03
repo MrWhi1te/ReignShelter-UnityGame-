@@ -14,8 +14,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   cardName: 
   cardSprite: {fileID: 1474748698, guid: 351cc6e0eaa7c3e4080832fba915b167, type: 3}
-  description: "\u041D\u0430\u0441\u0435\u043B\u0435\u043D\u0438\u0435 \u0443\u0431\u0435\u0436\u0438\u0449\u0430
-    \u043D\u0435 \u043E\u0441\u0442\u0430\u043B\u043E\u0441\u044C"
+  description: "\u041B\u044E\u0434\u0438 \u0443\u0441\u0442\u0430\u043B\u0438 \u043E\u0442
+    \u0432\u0430\u0441 \u0438 \u043B\u0438\u0448\u0438\u043B\u0438 \u0432\u0430\u0441
+    \u0436\u0438\u0437\u043D\u0438"
   adsCard: 0
   endCard: 1
   endTrainer: 0
