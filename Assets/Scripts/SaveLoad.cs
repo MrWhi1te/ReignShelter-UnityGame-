@@ -9,15 +9,13 @@ public class SaveLoad : MonoBehaviour
     [SerializeField] private UnityEngine.UI.Image loadImage;
     [SerializeField] private GameObject loadPan;
 
-    private bool saver;
-
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
 
     private void GetLoad()
     {
-        if (saver)
+        if (YandexGame.savesData.saver)
         {
             _GameManager.indexCard = YandexGame.savesData.indexCard;
             _GameManager.dayCount = YandexGame.savesData.dayCount;
@@ -33,6 +31,10 @@ public class SaveLoad : MonoBehaviour
         YandexGame.savesData.dayCount = _GameManager.dayCount;
 
         for (int i = 0; i < 4; i++) YandexGame.savesData.resources[i] = _GameManager._ResourcesData.resources[i].resourceValue;
+
+        if (!YandexGame.savesData.saver) YandexGame.savesData.saver = true;
+
+        YandexGame.SaveProgress();
     }
 
 

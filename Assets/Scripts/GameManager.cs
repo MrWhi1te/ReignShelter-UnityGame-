@@ -9,6 +9,7 @@ public class GameManager : MonoBehaviour
     public CardManager _CardManager;
     public ResourcesData _ResourcesData;
     public Sounds _Sounds;
+    public SaveLoad _Save;
 
     [HideInInspector] public int indexCard = 0;
     [HideInInspector] public int dayCount;
@@ -80,6 +81,7 @@ public class GameManager : MonoBehaviour
         indexCard = 0;
         startGamePan.SetActive(true);
         _DayCount.ResetCounter();
+        _Save.Save();
     }
 
     public void ActiveCardStart()
@@ -122,6 +124,7 @@ public class GameManager : MonoBehaviour
         dayCountText.text = dayCount + " дней выживания";
         _Sounds.PlayAudioSwipe();
         _CardManager.UpdateCard();
+        _Save.Save();
     }
 
     public void ReshuffleCards()
