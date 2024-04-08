@@ -6,9 +6,6 @@ public class SaveLoad : MonoBehaviour
 {
     public GameManager _GameManager;
 
-    [SerializeField] private UnityEngine.UI.Image loadImage;
-    [SerializeField] private GameObject loadPan;
-
     private void OnEnable() => YandexGame.GetDataEvent += GetLoad;
 
     private void OnDisable() => YandexGame.GetDataEvent -= GetLoad;
@@ -22,7 +19,6 @@ public class SaveLoad : MonoBehaviour
 
             for(int i=0; i < 4; i++) _GameManager._ResourcesData.resources[i].resourceValue = YandexGame.savesData.resources[i];
         }
-        StartCoroutine(LoadGame());
     }
 
     public void Save()
@@ -35,19 +31,5 @@ public class SaveLoad : MonoBehaviour
         if (!YandexGame.savesData.saver) YandexGame.savesData.saver = true;
 
         YandexGame.SaveProgress();
-    }
-
-
-    IEnumerator LoadGame()
-    {
-        float fill = 0;
-        while (fill < 0.95)
-        {
-            loadImage.fillAmount = fill;
-            fill += 0.05f;
-            yield return new WaitForSeconds(0.1f);
-        }
-        loadPan.SetActive(false);
-        yield break;
     }
 }

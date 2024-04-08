@@ -26,6 +26,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private CardData[] trainerCards;
     [SerializeField] private CardData[] dieCards;
     [SerializeField] private CardData adsCard;
+    [SerializeField] private CardData winCard;
 
     public Dictionary<string, CardData[]> dictionaryCards;
 
@@ -61,18 +62,15 @@ public class GameManager : MonoBehaviour
             { "die", dieCards }
         };
         
-        if(indexCard == 0)
-        {
-            ReshuffleCards();
-            dictionaryCards.Add( "", mainCards);
-        }
-        else dictionaryCards.Add("", mainCards);
+        ReshuffleCards();
+        dictionaryCards.Add( "", mainCards);
 
-        dayCountText.text = dayCount + " дней выживания";
+        dayCountText.text = "Дней выживания: " + dayCount;
         startGamePan.SetActive(false);
         ActiveCardStart();
         if(!trainer) _CardManager.currentCard = dictionaryCards["trainer"][0];
         else _CardManager.currentCard = dictionaryCards[""][indexCard];
+        _ResourcesData.StartGame();
         _CardManager.UpdateCard();
     }
 
@@ -103,7 +101,7 @@ public class GameManager : MonoBehaviour
             _CardManager.currentCard = dictionaryCards["random"][r];
             randomEventsCardsCount = 0;
         }
-        else if (adsCardsCount >= 7)
+        else if (adsCardsCount >= 12)
         {
             _CardManager.currentCard = adsCard;
             adsCardsCount = 0;
@@ -112,16 +110,13 @@ public class GameManager : MonoBehaviour
         {
             indexCard++;
             dayCount++;
-            if (indexCard < mainCards.Length) _CardManager.currentCard = dictionaryCards[""][indexCard];
-            else
-            {
-                indexCard = 0;
-                Debug.Log("WIN!");
-            }
             randomEventsCardsCount++;
             adsCardsCount++;
+
+            if (indexCard < mainCards.Length) _CardManager.currentCard = dictionaryCards[""][indexCard];
+            else _CardManager.currentCard = winCard;
         }
-        dayCountText.text = dayCount + " дней выживания";
+        dayCountText.text = "Дней выживания: " + dayCount;
         _Sounds.PlayAudioSwipe();
         _CardManager.UpdateCard();
         _Save.Save();

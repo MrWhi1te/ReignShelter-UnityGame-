@@ -8,7 +8,6 @@ public class CardData : ScriptableObject
     [TextArea] public string description;
     public bool adsCard;
     public bool endCard;
-    public bool endTrainer;
 
     [Header("Right")]
     public SideEffect rightSide;

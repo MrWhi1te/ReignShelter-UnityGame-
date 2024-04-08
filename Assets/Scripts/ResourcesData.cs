@@ -17,7 +17,7 @@ public class ResourcesData : MonoBehaviour
         }
     }
 
-    private void Start()
+    public void StartGame()
     {
         for (int i = 0; i < resources.Length; i++)
         {

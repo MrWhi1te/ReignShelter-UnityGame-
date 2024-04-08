@@ -21,7 +21,7 @@ public class Resource : MonoBehaviour
 
     public void NewGame()
     {
-        resourceValue = 0.3f;
+        resourceValue = 0.4f;
         StartGame();
     }
 

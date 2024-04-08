@@ -15,7 +15,6 @@ public class DayCount : MonoBehaviour
     private void Start()
     {
         dayCountText.text = _GameManager.dayCount + " дней выживания";
-        if(_GameManager.dayCount == 0) startGameBttn.SetActive(true);
     }
 
     public void ResetCounter()
